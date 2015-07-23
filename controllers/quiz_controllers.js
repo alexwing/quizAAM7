@@ -1,25 +1,19 @@
-var quiz = (function(){
+var models = require('../models/models.js');
 
-    var question = function(req,res){
-        res.render('quizes.ejs', { quiz: 'Cual es la capital de Italia' });
-    };
+//get /quizes/question
 
-    var answer = function(req,res){
-        console.log(req.query.answer);
-        var result = "Respuesta incorrecta";
-        if (req.query.answer.trim().toUpperCase() == "ROMA"){
-            result = "Respuesta correcta";
-        }
-        res.render('answer', { result: result });
-    }
-    
-    return {
-    
-        question:question,
-        answer:answer
-    }
-   
-    
-})();
-
-module.exports = quiz;
+exports.question = function (req,res){
+	models.Quiz.findAll().success(function(quiz) {
+		res.render('answer', {pregunta:quiz[0].pregunta})
+	})
+};
+//get /quizes/answer
+exports.answer = function (req,res){
+	models.Quiz.findAll().success(function(quiz) {
+		if (req.query.respuesta === req.query.answer){	
+			res.render('answer', {respuesta:"Correcto"})
+		} else {
+			res.render('answer', {respuesta:"Incorrecto"})
+		}
+	})
+};
