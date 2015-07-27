@@ -1,54 +1,34 @@
 <!DOCTYPE html>
-<html>
-	
+<html lang="es">
 	<head>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-	    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Preguntas</title>
+		<link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+		<link rel='stylesheet' type="text/css"
+			media='only screen and (min-width: 530px) and (min-device-width:481px)'
+			href='/stylesheets/wide.css' />
+		<link rel='stylesheet' type="text/css"
+			media='only screen and (max-width: 480px)'
+			href='/stylesheets/smartphone.css' />
 	</head>
 	<body>
-		<header><h1>Quiz: el juego de preguntas</h1></header>
-		
-		<nav class="navbar navbar-default" role="navigation">
-		  <div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse"
-		            data-target=".navbar-ex1-collapse">
-		      <span class="sr-only">Desplegar navegación</span>
-		      <span class="icon-bar"></span>
-		      <span class="icon-bar"></span>
-		      <span class="icon-bar"></span>
-		    </button>
-		    <a class="navbar-brand" href="/">Inicio</a>
-		  </div>
-		 
-		  <div class="collapse navbar-collapse navbar-ex1-collapse">
-		    <ul class="nav navbar-nav">
-		      <li><a href="/quizes/question">Preguntas</a></li>
-		      <li><a href="/author">Autores</a></li>
-		    </ul>
-		  </div>
-		</nav>
-
-		
-		<section class="container">
-			<%- body %>
-		</section>
-
-		<br/>
-
-		<footer class="panel panel-default">
-		 	<div class="panel-body">
-				<a href="https://github.com/alexwing/quizAAM7">Enlace GitHub</a>
-			</div>
-		</footer>
+		<div id="page-warp">
+			<header class="main" id="h1">
+					<h2>Quiz: el juego de las preguntas</h2>
+			</header>
+			<nav class="main" id="n1" role="navigation">
+				<span><a href="/">Inicio</a></span>
+				<span><a href="/quizes/question">Preguntas</a></span>
+				<span><a href="/author">Créditos</a></span>
+			</nav>
+			<section class="main" id="s1">
+				<%- body %>
+			</section>
+			<footer class="main" id="f1">
+				<a href="http://es.wikipedia.org/wiki/Quiz">¿Qué es un Quiz?</a>
+				<a href="https://github.com/alexwing/quizAAM">Proyecto en Github</a>
+ 			</footer>
+		</div>
 	</body>
-	
 </html>
